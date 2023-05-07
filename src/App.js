@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Weather from "./Weather";
 
-
 function App() {
   let [city, setCity] = useState("");
   let [result, setResult] = useState("");
@@ -21,7 +20,14 @@ function App() {
         }}
       />
       <input type="submit" value="Search" />
-     
+      <div>
+        <small>
+          <a href="https://github.com/HaniehAbdolahi/weather_react_app1">
+            source-code
+          </a>
+          by Hanieh Abdolahi
+        </small>
+      </div>
     </form>
   );
 }
