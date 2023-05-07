@@ -24,7 +24,7 @@ function App() {
         <small>
           <a href="https://github.com/HaniehAbdolahi/weather_react_app1">
             source-code
-          </a>
+          </a>{" "}
           by Hanieh Abdolahi
         </small>
       </div>
