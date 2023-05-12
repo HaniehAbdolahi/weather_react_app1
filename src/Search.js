@@ -13,7 +13,7 @@ export default function Search() {
   function showWeatherForcast(response) {
     setIcon(response.data.weather[0].icon);
     setIconUrl(`https://openweathermap.org/img/wn/${icon}@2x.png`);
-
+    alert(iconUrl);
     setResult(
       <ul>
         <li>temperature:{Math.round(response.data.main.temp)}°C</li>

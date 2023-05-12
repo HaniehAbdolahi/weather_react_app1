@@ -6,7 +6,7 @@ export default function App() {
     <div className="App">
       <Search />
       <div>
-        <a href=" github.com/HaniehAbdolahi/weather_react_app1.">
+        <a href="https://github.com/HaniehAbdolahi/weather_react_app1">
           source-coded
         </a>{" "}
         by Hanieh Abdolahi
