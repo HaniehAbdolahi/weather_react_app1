@@ -35,11 +35,36 @@ export default function Search() {
   return (
     <div className="Search">
       <form onSubmit={handelSubmit}>
-        <h1>Weather App</h1>
-        <input type="text" placeholder="Enter a city.." onChange={updateCity} />
-        <input type="submit" value="Search" />
+        <div className="row">
+          <div className="col-sm-6 searchBox ">
+            <div className="row justify-content-center">
+              <div className="col-sm-10 p-3 m-3">
+                <div className="input-group mb-3">
+                  <input
+                    className="form-control"
+                    type="text"
+                    placeholder="Enter a city.."
+                    onChange={updateCity}
+                  />
+                  <input
+                    className="btn btn-primary"
+                    type="submit"
+                    value="Search"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-4 p-3">
+            <div className="row todayForcast">
+              <p className=" ">{result}</p>
+            </div>
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="WeekForcast col-sm-11 ">hi</div>
+        </div>
       </form>
-      <p>{result}</p>
     </div>
   );
 }

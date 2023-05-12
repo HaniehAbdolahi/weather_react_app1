@@ -1,0 +1,17 @@
+.App {
+  background-image: url("./image/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+
+.todayForcast {
+  background-color: white;
+  border: 1px solid #ababab;
+  border-radius: 3px;
+}
+.WeekForcast{
+     background-color: white;
+  border: 1px solid #ababab;
+  border-radius: 3px;
+}
