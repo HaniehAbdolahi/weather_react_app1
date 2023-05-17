@@ -1,5 +1,5 @@
 import React from "react";
-
+import WeatherIcon from "./WeatherIcon";
 import FormatedDate from "./FormatedDate";
 
 export default function Weather(props) {
@@ -15,10 +15,7 @@ export default function Weather(props) {
         <li>humidity: {props.weatherData.humidity}%</li>
         <li>wind: {props.weatherData.wind}km/h</li>
         <li>
-          <img
-            alt={props.weatherData.description}
-            src={props.weatherData.iconUrl}
-          />
+          <WeatherIcon code={props.weatherData.icon} />
         </li>
       </ul>
     </div>
