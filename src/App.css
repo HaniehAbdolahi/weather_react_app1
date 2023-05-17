@@ -10,8 +10,16 @@
   border: 1px solid #ababab;
   border-radius: 3px;
 }
-.WeekForcast{
-     background-color: white;
+.WeekForcast {
+  background-color: white;
   border: 1px solid #ababab;
   border-radius: 3px;
+}
+ul.weather {
+  color: white;
+}
+
+.searchBox {
+  max-width: 600px;
+  padding: 3px;
 }
