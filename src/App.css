@@ -15,8 +15,10 @@
   border: 1px solid #ababab;
   border-radius: 3px;
 }
-ul.weather {
+.weather {
   color: white;
+}
+.weather ul {
   list-style-type: none;
 }
 
