@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Search from "./Search";
+import FormatedDate from "./FormatedDate";
 
 export default function Weather(props) {
   //return "from weather";
@@ -23,7 +24,9 @@ export default function Weather(props) {
       <div>
         <Search />
         <ul className="weather">
-          <li></li>
+          <li>
+            <FormatedDate date={new Date(weatherData.date * 1000)} />
+          </li>
           <li>temperature: {weatherData.temperature}°C</li>
           <li>describtion: {weatherData.description}</li>
           <li>humidity: {weatherData.humidity}%</li>

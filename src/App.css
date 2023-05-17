@@ -17,6 +17,7 @@
 }
 ul.weather {
   color: white;
+  list-style-type: none;
 }
 
 .searchBox {
