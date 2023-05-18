@@ -3,26 +3,63 @@
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 5px;
+  margin: auto;
+  padding: 4px;
 }
-
-.todayForcast {
+.footer {
   background-color: white;
-  border: 1px solid #ababab;
-  border-radius: 3px;
+  border-radius: 10px;
+  margin: 3px;
 }
-.WeekForcast {
-  background-color: white;
-  border: 1px solid #ababab;
-  border-radius: 3px;
+div.cityName,
+.date {
+  margin: 3px;
+  margin-left: 35px;
+}
+h2.cityName {
+  font-size: 24px;
+}
+h6.date {
+  font-size: 12px;
+  line-height: 1px;
+  margin: 0px 0px 20px 0px;
+  color: #ababab;
+}
+.weatherIcon {
+  margin: 0px auto;
+}
+.info {
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 4px;
+  padding: 21px;
+}
+.todayTemp {
+  margin: 10% auto 10% 0px;
+}
+.temp {
+  font-size: 64px;
+}
+.unit {
+  font-size: 24px;
+  position: relative;
+  top: -35px;
+}
+canvas {
+  display: block;
+  margin: auto;
 }
 .weather {
   color: white;
+  max-width: 800px;
+  min-height: 320px;
+  margin: auto;
 }
 .weather ul {
   list-style-type: none;
 }
-
 .searchBox {
   max-width: 600px;
   padding: 3px;
+  margin: 8% auto;
 }

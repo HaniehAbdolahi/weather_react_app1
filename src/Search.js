@@ -15,7 +15,7 @@ export default function Search(props) {
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
-      icon:response.data.weather[0].icon
+      icon: response.data.weather[0].icon,
     });
     //iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   }
@@ -36,7 +36,7 @@ export default function Search(props) {
     return (
       <div className="search">
         <form onSubmit={handelSubmit}>
-          <div className="searchBox input-group mb-3">
+          <div className="searchBox input-group">
             <input
               className="form-control"
               type="text"
