@@ -8,10 +8,9 @@ export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handelResponse(response) {
-    console.log(response);
     setWeatherData({
       ready: true,
-      cordinates:response.data.coord,
+      cordinates: response.data.coord,
       date: response.data.dt,
       city: response.data.name,
       temperature: Math.round(response.data.main.temp),
@@ -56,6 +55,6 @@ export default function Search(props) {
     );
   } else {
     callApi();
-    return "Loading...";
+    return <div className="row">"Loading..."</div>;
   }
 }
