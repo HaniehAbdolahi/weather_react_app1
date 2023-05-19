@@ -8,8 +8,10 @@ export default function Search(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handelResponse(response) {
+    console.log(response);
     setWeatherData({
       ready: true,
+      cordinates:response.data.coord,
       date: response.data.dt,
       city: response.data.name,
       temperature: Math.round(response.data.main.temp),
@@ -49,7 +51,7 @@ export default function Search(props) {
           </div>
         </form>
         <Weather weatherData={weatherData} />
-        <WeatherForecast />
+        <WeatherForecast cordinates={weatherData.cordinates} />
       </div>
     );
   } else {
