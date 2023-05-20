@@ -11,14 +11,21 @@ export default function Weather(props) {
       </div>
       <div className="date">
         <h6 className="date">
-          <FormatedDate date={new Date(props.weatherData.date * 1000)} />
+          <FormatedDate
+            date={new Date(props.weatherData.date * 1000)}
+            flag="dayTime"
+          />
         </h6>
       </div>
       <div className="row">
         <div className="col-sm-6">
           <div className="row todayTemp">
             <div className="col-sm-6">
-              <WeatherIcon code={props.weatherData.icon} size={100} />
+              <WeatherIcon
+                flag="openWeather"
+                code={props.weatherData.icon}
+                size={100}
+              />
             </div>
             <div className="col-sm-6">
               <WeatherUnit temperature={props.weatherData.temperature} />
