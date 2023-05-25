@@ -3,20 +3,22 @@ import WeatherIcon from "./WeatherIcon";
 import FormatedDate from "./FormatedDate";
 
 export default function WeatherForecastDay(props) {
-  console.log(props.data);
- 
   return (
     <div className="WeatherForecastDay">
+      <FormatedDate date={new Date(props.data.time * 1000)} flag="day" />
       <div className="weatherForecast-day">
-        <FormatedDate date={new Date(props.data[0].time * 1000)} flag="day" />
+        <WeatherIcon
+          source={"shecodes"}
+          code={props.data.condition.icon}
+          size={36}
+        />
       </div>
-      <WeatherIcon flag="shecodes" code={props.data[0].condition.icon} size={36} />
       <div className="weatherForecast-temerature">
         <span className="weatherForecast-temerature-max">
-          {Math.round(props.data[0].temperature.maximum)}°C
+          {Math.round(props.data.temperature.maximum)}°C
         </span>
         <span className="weatherForecast-temerature-min">
-          {Math.round(props.data[0].temperature.minimum)}°C
+          {Math.round(props.data.temperature.minimum)}°C
         </span>
       </div>
     </div>

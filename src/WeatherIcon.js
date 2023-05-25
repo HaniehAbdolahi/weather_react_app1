@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactAnimatedWeather from "react-animated-weather";
 
 export default function WeatherIcon(props) {
@@ -41,30 +41,29 @@ export default function WeatherIcon(props) {
     "clear-sky-night": ["CLEAR_NIGHT", "gold"],
   };
 
-  let [color, setColor] = useState("white");
-
-  //alert(codeMapping[props.code][1]);
-  let [icon, setIcon] = useState(null);
-  if (props.flag === "openWeather") {
-    setIcon(openWeatherCodeMapping[props.code][0]);
-    setColor(openWeatherCodeMapping[props.code][1]);
-  } else if (props.flag === "shecodes") {
-    setIcon(shecodesMapCoding[props.code][0]);
-    setColor(shecodesMapCoding[props.code][1]);
-  } else {
-    //default
-    setIcon("CLEAR_DAY");
-    setColor("gold");
+  if (props.source === "openWeather") {
+    return (
+      <span className="weatherIcon">
+        <ReactAnimatedWeather
+          icon={openWeatherCodeMapping[props.code][0]}
+          // icon={props.code}
+          color={openWeatherCodeMapping[props.code][1]}
+          size={props.size}
+          animate={true}
+        />
+      </span>
+    );
+  } else if (props.source === "shecodes") {
+    return (
+      <span className="weatherIcon">
+        <ReactAnimatedWeather
+          icon={shecodesMapCoding[props.code][0]}
+          // icon={props.code}
+          color={shecodesMapCoding[props.code][1]}
+          size={props.size}
+          animate={true}
+        />
+      </span>
+    );
   }
-  return (
-    <span className="weatherIcon">
-      <ReactAnimatedWeather
-        icon={icon}
-        // icon={props.code}
-        color={color}
-        size={props.size}
-        animate={true}
-      />
-    </span>
-  );
 }

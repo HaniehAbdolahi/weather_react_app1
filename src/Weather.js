@@ -22,7 +22,7 @@ export default function Weather(props) {
           <div className="row todayTemp">
             <div className="col-sm-6">
               <WeatherIcon
-                flag="openWeather"
+                source={"openWeather"}
                 code={props.weatherData.icon}
                 size={100}
               />
