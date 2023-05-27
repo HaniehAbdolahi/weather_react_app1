@@ -6,7 +6,6 @@ import axios from "axios";
 export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
-  const [unit, setUnit] = useState("Metric");
 
   function handelResponse(response) {
     setWeatherData({
@@ -24,7 +23,7 @@ export default function Search(props) {
   }
   function callApi() {
     const appid = "ebef9ca4a8de66ed586fac628fade056";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}&units=${unit}`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}&units=Metric`;
     axios.get(url).then(handelResponse);
   }
   function handelSubmit(event) {
@@ -36,7 +35,6 @@ export default function Search(props) {
   }
 
   if (weatherData.ready) {
-   
     return (
       <div className="search">
         <form onSubmit={handelSubmit}>
@@ -51,8 +49,8 @@ export default function Search(props) {
             <input className="btn btn-primary" type="submit" value="Search" />
           </div>
         </form>
-        <Weather weatherData={weatherData} unit={unit} />
-        <WeatherForecast cordinates={weatherData.cordinates} unit={unit} />
+        <Weather weatherData={weatherData} />
+        <WeatherForecast cordinates={weatherData.cordinates} />
       </div>
     );
   } else {
