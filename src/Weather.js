@@ -28,7 +28,7 @@ export default function Weather(props) {
               />
             </div>
             <div className="col-sm-6">
-              <WeatherUnit temperature={props.weatherData.temperature} />
+              <WeatherUnit temperature={props.weatherData.temperature} unit={props.unit} />
             </div>
           </div>
         </div>

@@ -15,13 +15,6 @@ export default function WeatherForecast(props) {
     setForcast(response.data.daily);
     setLoaded(true);
   }
-  let longitude = props.cordinates.lon;
-  let latitude = props.cordinates.lat;
-  const appid = "100a50a3255t3abdofc6f395edf0e454";
-  let url = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${appid}`;
-  axios.get(url).then(handelResponse);
-  console.log(Loaded);
-
   if (Loaded) {
     return (
       <div className="weatherForecast">
@@ -30,7 +23,7 @@ export default function WeatherForecast(props) {
             if (index < 5) {
               return (
                 <div className="col" key={index}>
-                  <WeatherForecastDay data={forecastDaily} />
+                  <WeatherForecastDay data={forecastDaily} unit={props.unit} />
                 </div>
               );
             }
@@ -39,6 +32,12 @@ export default function WeatherForecast(props) {
       </div>
     );
   } else {
-    return null;
+    let longitude = props.cordinates.lon;
+    let latitude = props.cordinates.lat;
+    const appid = "100a50a3255t3abdofc6f395edf0e454";
+    //const appid = "8ca7dd4e61360b90fb66918853670e48";
+    let url = `https://api.shecodes.io/weather/v1/forecast?lon=${longitude}&lat=${latitude}&key=${appid}&units=Metric`;
+    //let url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&cnt=5&appid=${appid}&units=metric`;
+    axios.get(url).then(handelResponse);
   }
 }

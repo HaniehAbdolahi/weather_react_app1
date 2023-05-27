@@ -6,6 +6,7 @@ import axios from "axios";
 export default function Search(props) {
   const [city, setCity] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ ready: false });
+  const [unit, setUnit] = useState("Metric");
 
   function handelResponse(response) {
     setWeatherData({
@@ -22,8 +23,8 @@ export default function Search(props) {
     //iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   }
   function callApi() {
-    const appid = "8944afa6845bd7c413a687258d3211ef";
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}&units=metric`;
+    const appid = "ebef9ca4a8de66ed586fac628fade056";
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appid}&units=${unit}`;
     axios.get(url).then(handelResponse);
   }
   function handelSubmit(event) {
@@ -35,6 +36,7 @@ export default function Search(props) {
   }
 
   if (weatherData.ready) {
+   
     return (
       <div className="search">
         <form onSubmit={handelSubmit}>
@@ -49,8 +51,8 @@ export default function Search(props) {
             <input className="btn btn-primary" type="submit" value="Search" />
           </div>
         </form>
-        <Weather weatherData={weatherData} />
-        <WeatherForecast cordinates={weatherData.cordinates} />
+        <Weather weatherData={weatherData} unit={unit} />
+        <WeatherForecast cordinates={weatherData.cordinates} unit={unit} />
       </div>
     );
   } else {

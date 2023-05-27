@@ -1,14 +1,16 @@
 .App {
-  background-image: url("./image/background.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  /* background-image: url("./image/background.jpg"); */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  border-radius: 5px;
+  border: 1px solid black;
   border-radius: 5px;
   margin: auto;
   padding: 4px;
-  color :white;
+  max-width: 600px;
 }
 .footer {
-  background-color: white;
+  /* background-color: white; */
   border-radius: 10px;
   margin: 3px;
 }
@@ -30,7 +32,7 @@ h6.date {
   margin: 0px auto;
 }
 .info {
-  border: 1px solid white;
+  border: 1px solid black;
   border-radius: 5px;
   margin: 4px;
   padding: 21px;
@@ -39,7 +41,7 @@ h6.date {
   margin: 10% auto 10% 0px;
 }
 .temp {
-  font-size: 64px;
+  font-size: 50px;
 }
 .unit {
   font-size: 24px;
@@ -51,7 +53,7 @@ canvas {
   margin: auto;
 }
 .weather {
-  color: white;
+  color: black;
   max-width: 800px;
   min-height: 320px;
   margin: auto;
